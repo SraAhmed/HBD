@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: rgb(22, 101, 149);
+      }
+      video {
+        opacity: 0.3;
+      }
+    </style>
+    <div id="konten">
+      <div class="foto">
+        <div class="image">
+          <!-- Foto --><img
+            id="ftKm"
+            src="https://i.postimg.cc/0jyyvR8J/images.jpg"
+            width="100px"
+            height="100px"
+            onClick="klikfoto();"
+          />
+        </div>
+        <span style="font-weight: 700; font-size: 13px" id="sp1"
+          ><div
+            id="lope"
+            style="
+              display: inline-block;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            &#9829;
+          </div></span
+        >
+        <div id="sp2" style="display: none">
+          <span style="font-weight: 700; font-size: 13px" id="finish"></span>
+        </div>
+      </div>
+
+      <audio style="display: none; margin: 20px 0" controls autoplay loop>
+         
+        <source src="LINK" type="audio/mpeg" />
+      </audio>
+
+      <div id="scrollImage">
+        <p>Heyyy&nbsp;<b id="kamu"></b>&nbsp;><</p>
+        <p>Happy birthday bro</p>
+        <p>i Wish you the best</p>
+        <p>كل عام وانت بخير برو</p>
+        <p>
+          يارب تحقق كل احلامك وامنياتك<img
+            style="margin-left: 10px"
+            alt="Pentol"
+            src="https://c.tenor.com/AlUwZp0ih_wAAAAi/pentol-quby.gif"
+            height="70"
+          />
+        </p>
+        <p>
+          <img
+            style="margin-right: 10px"
+            alt="Pentol"
+            src="https://c.tenor.com/1Si3A6alsiEAAAAi/pentol-quby.gif"
+            height="70"
+          />
+          <a href="https://t.me/+G3IohzlVXRZiYTBi">اضغط هنا</a>
+        </p>
+        <p>Wish you all the best&nbsp;<span id="wrnRed">><</span></p>
+        <p>
+          from sra~<img
+            style="margin-left: 10px"
+            alt="Pentol"
+            src="https://c.tenor.com/oQ_6wxtMrx0AAAAi/pentol-quby.gif"
+            height="70"
+          />
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var today = new Date();
+      var date =
+        today.getDate() +
+        "/" +
+        (today.getMonth() + 1) +
+        "/" +
+        today.getFullYear() +
+        ".";
+      var dateTime = date;
+      const swals = Swal.mixin({
+        cancelButtonColor: "#909090",
+        confirmButtonColor: "#00B487",
+        allowOutsideClick: false,
+      });
+      async function mulai() {
+        var { value: nama } = await swals.fire({
+          title: "enter your name",
+          input: "text",
+          confirmButtonText: "send",
+          showCancelButton: false,
+        });
+        if (nama) {
+          window.nama = nama;
+          finish = finish + ", " + nama + "!";
+          document.getElementById("kamu").innerHTML = "" + window.nama;
+          var { value: author } = await swals.fire({
+            title: nama + " do you know me?",
+            input: "text",
+            confirmButtonText: "send",
+            showCancelButton: false,
+          });
+          if (author != nama) {
+            document.getElementById("sp1").innerHTML =
+              " Happy birthday " + window.nama + "";
+            window.author = author;
+            await swals.fire(`اضغط على اوك &#10084;&#65039;`);
+            setTimeout(showDiv, 100);
+          }
+        }
+      }
+      //funct Mulai
+      mulai();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
